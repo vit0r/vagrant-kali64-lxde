@@ -25,6 +25,6 @@ rm /home/vagrant/fireflashupdate.sh
 cp -rv /vagrant/etc/proxychains.conf /etc/proxychains.conf
 cp -rv /vagrant/etc/interfaces /etc/network/interfaces
 
-apt upgrade -y
+#apt upgrade -y
 
 reboot
