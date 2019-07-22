@@ -1,0 +1,3 @@
+## VagrantKaliLinuXLXDE
+
+`vagrant up --provision`
