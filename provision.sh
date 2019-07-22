@@ -20,10 +20,13 @@ usermod -a -G audio vagrant
 
 wget ${FLASH_PLAYER_INSTALL_URL}
 chmod +x /home/vagrant/fireflashupdate.sh
+sh /home/vagrant/fireflashupdate.sh
 rm /home/vagrant/fireflashupdate.sh
 
-cp -rv /vagrant/etc/proxychains.conf /etc/proxychains.conf
-cp -rv /vagrant/etc/interfaces /etc/network/interfaces
+cp -arv /vagrant/etc/proxychains.conf /etc/proxychains.conf
+cp -arv /vagrant/etc/interfaces /etc/network/interfaces
+
+ln -s /usr/bin/ls /usr/bin/ll
 
 #apt upgrade -y
 
