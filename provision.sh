@@ -18,7 +18,7 @@ systemctl enable tor
 
 usermod -a -G audio vagrant
 
-wget #{FLASH_PLAYER_INSTALL_URL}
+wget ${FLASH_PLAYER_INSTALL_URL}
 chmod +x ~/fireflashupdate.sh
 ~/fireflashupdate.sh
 rm ~/fireflashupdate.sh
