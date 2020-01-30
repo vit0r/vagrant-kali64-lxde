@@ -4,7 +4,7 @@
 vmname = "vm-kali2019"
 
 Vagrant.configure("2") do |config|
-  config.vm.box = "offensive-security/kali-linux"
+  config.vm.box = "kalilinux/rolling-light"
   config.vm.hostname = vmname
   config.vm.synced_folder "./synced_folder", "/vagrant"
   config.ssh.keep_alive = true
