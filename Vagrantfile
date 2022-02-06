@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-vmname = "vm-kali2019"
+vmname = "vg-kali"
 
 Vagrant.configure("2") do |config|
   config.vm.box = "kalilinux/rolling"
@@ -18,10 +18,13 @@ Vagrant.configure("2") do |config|
     vb.customize ["modifyvm", :id, "--vram", "128"]
   end
   
-   config.vm.provision "install_pkg",
-   type: "shell",
-   path: "./provision.sh",
-   run: "aways",
-   preserve_order: true
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y crowbar python3-dev gparted alsa-utils transmission unrar build-essential vim tor lame libavcodec-extra ffmpeg transmission-cli
+    usermod -a -G audio vagrant
+    systemctl enable --now tor
+    cp -arv /vagrant/etc/proxychains.conf /etc/proxychains.conf
+    cp -arv /vagrant/etc/interfaces /etc/network/interfaces
+  SHELL
    
 end

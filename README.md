@@ -1,3 +1,3 @@
-## vagrant-kali64-lxde
+# vagrant-kali
 
 `vagrant up --provision`
