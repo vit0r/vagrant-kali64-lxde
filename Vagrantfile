@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-vmname = "vg-kali"
+vmname = "kalilinux-rolling"
 
 Vagrant.configure("2") do |config|
   config.vm.box = "kalilinux/rolling"
